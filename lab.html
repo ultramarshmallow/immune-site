@@ -1,1 +1,194 @@
-PLACEHOLDER_WILL_REPLACE
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Immune Lab — Updates & Try it</title>
+<style>
+:root{--bg:#f4efe6;--ink:#1a1614;--muted:#5a534c;--sub:#3d3834;--g:#2f5d3a;--gd:#254a2e;--gs:#e8efe9;--card:#fff;--b:#d9d0c3;--bs:#c9bfb0;--wash:#efe8dc;--phone:#1a1614;--scr:#faf7f2}
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,sans-serif;margin:0;color:var(--ink);background:var(--bg);line-height:1.5}
+a{color:var(--g)}h1,h2,h3{letter-spacing:-.02em}.wrap{max-width:1100px;margin:0 auto;padding:1.25rem 1.25rem 2.5rem}
+.nav{margin-bottom:1rem;font-size:.95rem}
+.tabs{display:flex;gap:.5rem;margin:1rem 0 1.5rem;border-bottom:1px solid var(--b);padding-bottom:.75rem}
+.tabs button{font:inherit;font-weight:600;padding:.5rem 1rem;border-radius:8px;border:1px solid transparent;background:transparent;color:var(--sub);cursor:pointer}
+.tabs button.active{background:var(--g);color:#fff}.panel{display:none}.panel.active{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.5rem}
+.chip{padding:.35rem .7rem;border-radius:999px;font-size:.8rem;font-weight:600;background:var(--wash);border:1px solid var(--b);color:var(--sub)}
+.chip.ok{background:#eef5ef;border-color:#b7cfc0;color:var(--g)}.chip.warn{background:#f7efe6;border-color:#e0c9a8;color:#7a4e1a}
+.card{background:var(--card);border:1px solid var(--b);border-radius:12px;padding:1rem 1.15rem;margin:0 0 .85rem}
+.card h3{margin:0 0 .4rem;font-size:1rem}.card .date{font-size:.8rem;color:var(--muted);font-weight:600;margin-bottom:.5rem}
+.card ul{margin:.35rem 0 0;padding-left:1.15rem}.card li{margin-bottom:.3rem}
+.growth,.gates{margin:1.25rem 0;padding:.9rem 1.15rem;background:var(--card);border:1px solid var(--b);border-radius:12px}
+.gates label{display:flex;gap:.55rem;margin:.45rem 0;color:var(--sub)}.honest{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--b);font-size:.85rem;color:var(--muted)}
+.try-layout{display:grid;gap:1.5rem}@media(min-width:900px){.try-layout{grid-template-columns:1fr minmax(320px,380px)}.phone-col{position:sticky;top:1rem}}
+.btn{display:inline-block;padding:.55rem .95rem;background:var(--g);color:#fff;border:none;border-radius:8px;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--gd)}.btn-sec{background:transparent;color:var(--g);border:1px solid var(--g)}.btn-sm{padding:.4rem .7rem;font-size:.8rem}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--b)}.btn-dang{background:transparent;color:#8a3b2a;border:1px solid #d4a89c}
+.phone{max-width:360px;margin:0 auto;background:var(--phone);border-radius:36px;padding:12px;box-shadow:0 18px 40px rgba(26,22,20,.18)}
+.notch{width:120px;height:28px;background:#000;border-radius:0 0 14px 14px;margin:0 auto 8px}
+.screen{background:var(--scr);border-radius:28px;min-height:640px;max-height:720px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.hdr{padding:1rem 1rem .65rem;border-bottom:1px solid var(--b);background:#fff}.hdr h2{margin:0;font-size:1.15rem;display:flex;justify-content:space-between;align-items:center}
+.mode{font-size:.75rem;font-weight:700;padding:.25rem .55rem;border-radius:999px;background:var(--gs);color:var(--g);border:1px solid #b7cfc0;cursor:pointer;font:inherit}
+.mode.cruise{background:#f7efe6;color:#7a4e1a;border-color:#e0c9a8}.mode.lock{background:#eee;color:#555;border-color:#ccc}
+.note{font-size:.75rem;color:var(--muted);margin-top:.4rem;display:none}.note.show{display:block}
+.body{flex:1;overflow-y:auto;padding:.85rem}
+.navb{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--b);background:#fff}
+.navb button{font:inherit;font-size:.7rem;font-weight:600;padding:.65rem .25rem;border:none;background:transparent;color:var(--muted);cursor:pointer}
+.navb button.active{color:var(--g);background:var(--gs)}.scr{display:none}.scr.active{display:block}
+.sug{background:#fff;border:1px solid var(--b);border-radius:14px;padding:1rem;margin-bottom:.85rem}
+.sug .l{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:.35rem}
+.sug p{margin:0 0 .85rem;font-size:.95rem}.sug .acts{display:flex;flex-wrap:wrap;gap:.4rem}
+.empty{text-align:center;color:var(--muted);padding:2rem 1rem;font-size:.9rem}
+.row{background:#fff;border:1px solid var(--b);border-radius:10px;padding:.7rem .85rem;font-size:.85rem;margin-bottom:.5rem}
+.row .k{font-weight:700;color:var(--g);font-size:.72rem;text-transform:uppercase}.row .t{font-size:.72rem;color:var(--muted);margin-top:.2rem}
+.rule{display:flex;justify-content:space-between;align-items:center;gap:.5rem}.rule .s{font-weight:600;word-break:break-all}
+.pats{display:flex;flex-wrap:wrap;gap:.45rem}.pat{font-size:.78rem;padding:.4rem .65rem;border-radius:999px;background:var(--wash);border:1px solid var(--b)}
+.toast{position:absolute;left:12px;right:12px;bottom:64px;background:var(--g);color:#fff;padding:.65rem .85rem;border-radius:10px;font-size:.85rem;display:none;z-index:5}
+.toast.show{display:block}.modal{position:absolute;inset:0;background:rgba(26,22,20,.45);display:none;align-items:flex-end;z-index:6}
+.modal.show{display:flex}.sheet{background:#fff;border-radius:16px 16px 0 0;padding:1rem;width:100%;max-height:80%;overflow:auto}
+.tail{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--b);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="nav"><a href="index.html">Home</a> · <a href="lab.html">Lab</a> · <a href="privacy.html">Privacy Policy</a></p>
+<div class="lab-header"><h1>Immune Lab</h1><p style="color:var(--muted);font-size:.9rem;margin:.25rem 0 0">Last updated Sep 5, 2026 PT · founder browser review</p></div>
+<div class="tabs">
+<button type="button" class="active" data-panel="updates">Updates</button>
+<button type="button" data-panel="try">Try it</button>
+</div>
+
+<section id="panel-updates" class="panel active">
+<div class="chips">
+<span class="chip ok">Path A in progress</span>
+<span class="chip warn">TestFlight blocked on Apple Team</span>
+<span class="chip">Live Gmail verify pending</span>
+</div>
+<div class="card" style="border-left:3px solid var(--g)">
+<div class="date">Sep 5, 2026</div>
+<h3>Path A — shipped in app</h3>
+<ul>
+<li>LiveGmailClient filter create/list/delete + Undo; Filters in Gmail panel; 401 retry</li>
+<li>Train / Cruise (gated) / Lock mode chip</li>
+<li>Activity timeline + Patterns; §23 Clean commercial mail; §22 Demo PASS</li>
+<li>Settings → Send feedback; RUNNING.md TF checklist + export flag; XCTest green</li>
+</ul>
+<p style="margin:.75rem 0 0;font-size:.9rem;color:var(--sub)"><strong>Next:</strong> orphan reconcile, feedback list, TF packaging notes only. No Thin B.</p>
+</div>
+<div class="card"><div class="date">Sep 5</div><h3>Earlier same day</h3><ul>
+<li>§23 tails review → Confirm unsub+block</li>
+<li>Demo Mode §22 green; set-and-forget UI polish</li>
+</ul></div>
+<div class="growth"><strong>Growth (Cos)</strong>
+<a href="https://www.reddit.com/r/iphone/comments/1w8nezg/ios_wont_let_third_apps_own_the_lock_screen_so_im/" target="_blank" rel="noopener">Reddit R1</a>
+<a href="https://x.com/Marshyz99/status/2096474558999965844" target="_blank" rel="noopener">X1</a>
+</div>
+<div class="gates"><h2 style="margin:0 0 .6rem;font-size:1.05rem">Human gates</h2>
+<label><input type="checkbox" disabled> Apple Developer Team / TestFlight upload</label>
+<label><input type="checkbox" disabled> Live Sign-In → Confirm filter in Gmail → Undo</label>
+</div>
+<p class="honest">Browser mock for founder review — real iOS app is separate. No live Gmail here.</p>
+</section>
+
+<section id="panel-try" class="panel">
+<div class="try-layout">
+<div>
+<p style="background:var(--card);border:1px solid var(--b);border-radius:12px;padding:1rem;font-size:.9rem;color:var(--sub)">Click through the phone mock: Yes → filter → Activity → Rules Undo. State saves in this browser.</p>
+<p><button type="button" class="btn btn-ghost btn-sm" id="reset">Reset mock</button></p>
+</div>
+<div class="phone-col">
+<div class="phone"><div class="notch"></div>
+<div class="screen">
+<div class="hdr">
+<div class="hdr"><!-- keep structure -->
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h2 style="margin:0;font-size:1.15rem">Immune</h2>
+<button type="button" class="mode" id="modeChip">Train</button>
+</div>
+<div class="note" id="modeNote"></div>
+</div>
+</div>
+<div class="body">
+<div class="scr active" id="scr-home">
+<div class="sug" id="suggest">
+<div class="l">Suggestion</div>
+<p>Block <strong>promo@storemail.example</strong> in the future?</p>
+<div class="acts">
+<button type="button" class="btn btn-sm" data-ans="yes">Yes</button>
+<button type="button" class="btn btn-sec btn-sm" data-ans="no">No</button>
+<button type="button" class="btn btn-ghost btn-sm" data-ans="always">Always allow</button>
+</div>
+</div>
+<div class="empty" id="homeEmpty" style="display:none">No pending suggestions. Set-and-forget.</div>
+<div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.75rem">
+<button type="button" class="btn btn-sec btn-sm" id="cleanBtn">Clean commercial mail</button>
+<button type="button" class="btn btn-ghost btn-sm" id="fbBtn">Send feedback</button>
+</div>
+</div>
+<div class="scr" id="scr-activity"><div id="actList"></div></div>
+<div class="scr" id="scr-patterns"><div class="pats" id="patList"></div></div>
+<div class="scr" id="scr-rules"><div id="ruleList"></div></div>
+</div>
+<div class="navb">
+<button type="button" class="active" data-tab="home">Home</button>
+<button type="button" data-tab="activity">Activity</button>
+<button type="button" data-tab="patterns">Patterns</button>
+<button type="button" data-tab="rules">Rules</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="sheet">
+<h3 style="margin:0 0 .75rem">Clean commercial mail</h3>
+<div class="tail"><span>news@brand.co</span><span>Block</span></div>
+<div class="tail"><span>deals@shop.io</span><span>Block</span></div>
+<div class="tail"><span>Equinox</span><span>Keep</span></div>
+<div class="tail"><span>Apple Arcade</span><span>Keep</span></div>
+<p style="margin:1rem 0"><button type="button" class="btn" id="confirmClean">Confirm 2 unsubscribes</button>
+<button type="button" class="btn btn-ghost" id="cancelClean">Cancel</button></p>
+</div></div>
+</div></div>
+</div>
+</div>
+<p class="honest">Browser mock for founder review — real iOS app is separate. No live Gmail here.</p>
+</section>
+</div>
+<script>
+const KEY='immune-lab-v1';
+const modes=['Train','Cruise','Lock'];
+const defaultState=()=>({mode:'Train',pending:true,rules:[],activity:[],patterns:['promo senders ignored 3×','unknown SMS filed 2×'],feedback:[]});
+let state=load();
+function load(){try{return Object.assign(defaultState(),JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){return defaultState()}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function addAct(kind,detail){state.activity.unshift({kind,detail,ts:new Date().toLocaleString()});save();render()}
+function render(){
+  const chip=document.getElementById('modeChip');chip.textContent=state.mode;chip.className='mode'+(state.mode==='Cruise'?' cruise':state.mode==='Lock'?' lock':'');
+  const note=document.getElementById('modeNote');
+  if(state.mode==='Cruise'){note.textContent='Cruise auto-accept is gated — Train behavior for now.';note.classList.add('show')}
+  else if(state.mode==='Lock'){note.textContent='Lock freezes new suggestions.';note.classList.add('show')}
+  else{note.classList.remove('show')}
+  const locked=state.mode==='Lock';
+  document.getElementById('suggest').style.display=(state.pending&&!locked)?'block':'none';
+  document.getElementById('homeEmpty').style.display=(!state.pending||locked)?'block':'none';
+  document.getElementById('actList').innerHTML=state.activity.length?state.activity.map(a=>`<div class="row"><div class="k">${a.kind}</div><div>${a.detail||''}</div><div class="t">${a.ts}</div></div>`).join(''):'<div class="empty">No activity yet</div>';
+  document.getElementById('patList').innerHTML=state.patterns.map(p=>`<span class="pat">${p}</span>`).join('');
+  document.getElementById('ruleList').innerHTML=state.rules.length?state.rules.map((r,i)=>`<div class="row rule"><div><div class="s">${r.sender}</div><div class="t">skip inbox</div></div><button type="button" class="btn btn-dang btn-sm" data-undo="${i}">Undo</button></div>`).join(''):'<div class="empty">No rules</div>';
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById('panel-'+b.dataset.panel).classList.add('active')});
+document.querySelectorAll('.navb button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.navb button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));document.getElementById('scr-'+b.dataset.tab).classList.add('active')});
+document.getElementById('modeChip').onclick=()=>{const i=modes.indexOf(state.mode);state.mode=modes[(i+1)%3];addAct('modeChange','Mode → '+state.mode)};
+document.querySelectorAll('[data-ans]').forEach(b=>b.onclick=()=>{
+  const a=b.dataset.ans;if(!state.pending)return;state.pending=false;
+  if(a==='yes'){state.rules.push({sender:'promo@storemail.example'});addAct('filterCreated','skip-inbox · promo@storemail.example');toast('Filter created · matching inbox cleaned')}
+  else if(a==='no'){addAct('suggestionNo','Dismissed promo@storemail.example');toast('Dismissed')}
+  else{addAct('alwaysAllow','Always allow promo@storemail.example');toast('Always allow')}
+});
+document.getElementById('ruleList').onclick=e=>{const u=e.target.getAttribute('data-undo');if(u==null)return;const r=state.rules.splice(+u,1)[0];addAct('undo','Removed rule · '+(r&&r.sender));toast('Undone')};
+document.getElementById('cleanBtn').onclick=()=>document.getElementById('modal').classList.add('show');
+document.getElementById('cancelClean').onclick=()=>document.getElementById('modal').classList.remove('show');
+document.getElementById('confirmClean').onclick=()=>{document.getElementById('modal').classList.remove('show');addAct('cleanup','Confirmed 2 commercial unsub+block');toast('Cleanup confirmed')};
+document.getElementById('fbBtn').onclick=()=>{const t=prompt('Feedback for TF / founder notes');if(!t)return;state.feedback.push(t);addAct('feedback',t.slice(0,80));toast('Feedback saved locally')};
+document.getElementById('reset').onclick=()=>{localStorage.removeItem(KEY);state=defaultState();save();render();toast('Reset')};
+render();
+</script>
+</body>
+</html>
