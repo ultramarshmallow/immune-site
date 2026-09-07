@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Immune Lab — Updates & Try it</title>
+<title>Immune Lab — Updates · Try it · Engagement</title>
 <style>
 :root{
   --bg:#f4efe6;--ink:#1a1614;--muted:#5a534c;--sub:#3d3834;
@@ -19,26 +19,24 @@ a:hover{color:var(--gd)}
 h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 .wrap{max-width:1120px;margin:0 auto;padding:1.5rem 1.5rem 3rem}
 
-/* Nav + header */
 .nav{margin-bottom:1.25rem;font-size:.9rem;color:var(--muted)}
 .nav a{font-weight:500}
 .lab-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem}
 .lab-top h1{margin:0;font-size:1.75rem}
 .lab-meta{font-size:.85rem;color:var(--muted);margin:.35rem 0 0}
 
-/* Tabs */
-.tabs{display:inline-flex;gap:.35rem;padding:.3rem;background:var(--wash);border:1px solid var(--b);border-radius:999px;margin-bottom:1.75rem}
+.tabs{display:inline-flex;gap:.35rem;padding:.3rem;background:var(--wash);border:1px solid var(--b);border-radius:999px;margin-bottom:1.75rem;flex-wrap:wrap}
 .tabs button{font:inherit;font-size:.9rem;font-weight:600;padding:.45rem 1.15rem;border-radius:999px;border:none;background:transparent;color:var(--sub);cursor:pointer;transition:background .15s,color .15s,box-shadow .15s}
 .tabs button:hover{color:var(--ink)}
 .tabs button.active{background:var(--g);color:#fff;box-shadow:0 2px 8px rgba(47,93,58,.25)}
 .panel{display:none}.panel.active{display:block}
 
-/* Updates — generous single column */
 .updates-col{max-width:640px}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.5rem}
 .chip{padding:.4rem .85rem;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.01em;background:var(--wash);border:1px solid var(--b);color:var(--sub)}
 .chip.ok{background:#eef5ef;border-color:var(--gl);color:var(--g)}
 .chip.warn{background:#f7efe6;border-color:#e0c9a8;color:#7a4e1a}
+.chip.info{background:#eef2f7;border-color:#c5d0de;color:#3a4f6a}
 
 .card{background:var(--card);border:1px solid var(--b);border-radius:var(--r);padding:1.15rem 1.35rem;margin:0 0 1rem;box-shadow:var(--shadow)}
 .card.featured{border-left:3px solid var(--g);padding-left:1.25rem}
@@ -58,7 +56,6 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 .gates input{margin-top:.2rem;accent-color:var(--g)}
 .honest{margin-top:2.25rem;padding-top:1.1rem;border-top:1px solid var(--b);font-size:.82rem;color:var(--muted);line-height:1.5}
 
-/* Try it — side-by-side */
 .try-layout{display:grid;gap:2rem;align-items:start}
 @media(min-width:900px){
   .try-layout{grid-template-columns:minmax(0,1fr) minmax(300px,360px)}
@@ -68,7 +65,6 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 .try-intro strong{color:var(--ink)}
 .try-actions{margin:0 0 .5rem}
 
-/* Buttons */
 .btn{display:inline-block;padding:.55rem 1rem;background:var(--g);color:#fff;border:none;border-radius:var(--r-sm);font:inherit;font-weight:600;cursor:pointer;transition:background .15s,box-shadow .15s,transform .1s}
 .btn:hover{background:var(--gd)}.btn:active{transform:scale(.98)}
 .btn-sec{background:transparent;color:var(--g);border:1.5px solid var(--g)}.btn-sec:hover{background:var(--gs)}
@@ -76,7 +72,6 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--b)}.btn-ghost:hover{background:var(--wash);color:var(--ink)}
 .btn-dang{background:transparent;color:#8a3b2a;border:1px solid #d4a89c}.btn-dang:hover{background:#faf0ed}
 
-/* Phone frame */
 .phone{
   max-width:340px;margin:0 auto;
   background:linear-gradient(165deg,#2a2420 0%,#1a1614 40%,#12100e 100%);
@@ -101,7 +96,6 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 }
 .status-bar .icons{display:flex;gap:.35rem;align-items:center;opacity:.85;font-size:.65rem}
 
-/* App chrome */
 .hdr{padding:.65rem 1rem .7rem;border-bottom:1px solid var(--b);background:#fff}
 .hdr-row{display:flex;justify-content:space-between;align-items:center;gap:.75rem}
 .hdr h2{margin:0;font-size:1.2rem}
@@ -122,7 +116,6 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 .navb button.active{color:var(--g);background:var(--gs)}
 .scr{display:none}.scr.active{display:block}
 
-/* Suggestion + rows */
 .sug{
   background:#fff;border:1px solid var(--b);border-radius:16px;padding:1.1rem 1.15rem;
   margin-bottom:.9rem;box-shadow:var(--shadow);
@@ -152,7 +145,6 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 .tail:last-of-type{border-bottom:none}
 .sheet .sheet-acts{margin:1.1rem 0 0;display:flex;flex-wrap:wrap;gap:.45rem}
 
-/* Mini phone preview on Updates (wide) */
 .updates-layout{display:grid;gap:2rem;align-items:start}
 @media(min-width:960px){
   .updates-layout{grid-template-columns:minmax(0,1fr) 200px}
@@ -169,6 +161,39 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 .preview-phone .ps .pt{font-size:.7rem;font-weight:700;margin-bottom:.5rem}
 .preview-phone .ps .pb{background:#fff;border:1px solid var(--b);border-radius:10px;padding:.55rem;font-size:.62rem;color:var(--sub);line-height:1.35}
 @media(max-width:959px){.preview-col{display:none}}
+
+
+.engage-note{margin:0 0 1.25rem;padding:.85rem 1rem;background:var(--gs);border:1px solid var(--gl);border-radius:var(--r);font-size:.9rem;color:var(--gd);line-height:1.45}
+.engage-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;margin:0 0 1rem}
+.engage-table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--b);border-radius:var(--r);box-shadow:var(--shadow);margin:0 0 1.25rem}
+table.engage{width:100%;border-collapse:collapse;font-size:.84rem;min-width:780px}
+table.engage th{text-align:left;padding:.7rem .75rem;background:var(--wash);border-bottom:1px solid var(--b);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;white-space:nowrap}
+table.engage td{padding:.65rem .75rem;border-bottom:1px solid var(--wash);vertical-align:middle;color:var(--sub)}
+table.engage tr:last-child td{border-bottom:none}
+table.engage tr:hover td{background:#faf8f4}
+table.engage .id{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.badge{display:inline-block;padding:.18rem .5rem;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.02em}
+.badge.live{background:#eef5ef;color:var(--g);border:1px solid var(--gl)}
+.badge.skipped{background:#f7efe6;color:#7a4e1a;border:1px solid #e0c9a8}
+.badge.blocked{background:#f5ecea;color:#8a3b2a;border:1px solid #d4a89c}
+.badge.chan{background:var(--wash);color:var(--sub);border:1px solid var(--b)}
+.badge.type-post{background:#eef2f7;color:#3a4f6a;border:1px solid #c5d0de}
+.badge.type-reply{background:#f3eef7;color:#5a3d6a;border:1px solid #d4c5de}
+select.handle{font:inherit;font-size:.8rem;padding:.3rem .45rem;border:1px solid var(--b);border-radius:8px;background:#faf7f2;color:var(--ink);accent-color:var(--g)}
+select.handle.unread{border-color:#e0c9a8;background:#f7efe6}
+select.handle.replied{border-color:var(--gl);background:#eef5ef}
+.engage-form{background:var(--card);border:1px solid var(--b);border-radius:var(--r);padding:1.1rem 1.25rem;box-shadow:var(--shadow)}
+.engage-form h3{margin:0 0 .85rem;font-size:1rem}
+.form-grid{display:grid;gap:.75rem;grid-template-columns:1fr}
+@media(min-width:700px){.form-grid{grid-template-columns:repeat(3,1fr)}}
+.form-grid label{display:flex;flex-direction:column;gap:.3rem;font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.form-grid input,.form-grid select{font:inherit;font-size:.9rem;font-weight:500;text-transform:none;letter-spacing:0;padding:.5rem .65rem;border:1px solid var(--bs);border-radius:8px;background:#faf7f2;color:var(--ink)}
+.form-grid .span2{grid-column:1/-1}
+.form-acts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;align-items:center}
+.form-hint{font-size:.78rem;color:var(--muted);margin:0}
+.muted-dash{color:var(--muted)}
+.page-toast{position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%);background:var(--g);color:#fff;padding:.65rem 1.1rem;border-radius:12px;font-size:.88rem;font-weight:600;box-shadow:0 8px 24px rgba(47,93,58,.3);z-index:50;display:none}
+.page-toast.show{display:block;animation:toastIn .25s ease}
 </style>
 </head>
 <body>
@@ -185,6 +210,7 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
 <div class="tabs" role="tablist">
   <button type="button" class="active" data-panel="updates" role="tab">Updates</button>
   <button type="button" data-panel="try" role="tab">Try it</button>
+  <button type="button" data-panel="engage" role="tab">Engagement</button>
 </div>
 
 <section id="panel-updates" class="panel active">
@@ -193,18 +219,20 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
   <div class="chips">
     <span class="chip ok">Path A in progress</span>
     <span class="chip ok">Apple Developer acquired</span>
+    <span class="chip info">You own replies</span>
     <span class="chip warn">Live Gmail verify pending</span>
   </div>
 
   <div class="card featured">
     <div class="date">Sep 6, 2026</div>
-    <h3>Apple Developer — TestFlight unblocked</h3>
+    <h3>Engagement pivot + Apple Developer</h3>
     <ul>
       <li>Apple Developer account acquired — TestFlight packaging is unblocked</li>
       <li>Human still uploads the build to App Store Connect / TestFlight</li>
-      <li>Packaging notes and export checklist remain agent-side until upload</li>
+      <li><strong>Engagement tracker</strong> added to Lab — log posts/replies, mark unread → replied</li>
+      <li>Cos stops auto-replying; Yuhang owns replies for genuine connection</li>
     </ul>
-    <div class="note-callout">Account is live. Packaging can proceed; a human still performs the TestFlight upload.</div>
+    <div class="note-callout">You own replies for genuine connection — Cos won't auto-reply. Track outreach in the Engagement tab.</div>
   </div>
 
   <div class="card">
@@ -229,9 +257,10 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
   </div>
 
   <div class="growth">
-    <strong>Growth (Cos)</strong>
+    <strong>Growth</strong>
     <a href="https://www.reddit.com/r/iphone/comments/1w8nezg/ios_wont_let_third_apps_own_the_lock_screen_so_im/" target="_blank" rel="noopener">Reddit R1</a>
     <a href="https://x.com/Marshyz99/status/2096474558999965844" target="_blank" rel="noopener">X1</a>
+    <a href="#engage" id="gotoEngage" style="text-decoration:none">Open Engagement →</a>
   </div>
 
   <div class="gates">
@@ -325,15 +354,85 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.25;font-weight:700}
   </div>
 </div>
 </section>
+
+<section id="panel-engage" class="panel">
+  <p class="engage-note"><strong>You own replies for genuine connection — Cos won't auto-reply.</strong> Mark items unread → replied as you handle them. Overrides save in this browser (<code style="font-size:.8em">immune-lab-engage-v1</code>).</p>
+
+  <div class="chips" id="engageChips"></div>
+
+  <div class="engage-toolbar">
+    <span class="form-hint">Seed rows merge with local overrides. Export anytime.</span>
+    <button type="button" class="btn btn-ghost btn-sm" id="exportEngage">Export JSON</button>
+  </div>
+
+  <div class="engage-table-wrap">
+    <table class="engage">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Channel</th>
+          <th>Type</th>
+          <th>When (PT)</th>
+          <th>Status</th>
+          <th>Link</th>
+          <th>Notes</th>
+          <th>Replies to handle</th>
+        </tr>
+      </thead>
+      <tbody id="engageBody"></tbody>
+    </table>
+  </div>
+
+  <div class="engage-form">
+    <h3>Add outreach row</h3>
+    <form id="engageAdd" autocomplete="off">
+      <div class="form-grid">
+        <label>ID<input name="id" required placeholder="X3 / R3 / X-E6" maxlength="24"></label>
+        <label>Channel
+          <select name="channel" required>
+            <option value="X">X</option>
+            <option value="Reddit">Reddit</option>
+            <option value="IH">IH</option>
+          </select>
+        </label>
+        <label>Type
+          <select name="type" required>
+            <option value="post">post</option>
+            <option value="reply">reply</option>
+          </select>
+        </label>
+        <label>Status
+          <select name="status">
+            <option value="live">live</option>
+            <option value="skipped">skipped</option>
+            <option value="blocked">blocked</option>
+          </select>
+        </label>
+        <label>When (PT)<input name="when" placeholder="Sep 6, 2026" maxlength="40"></label>
+        <label>URL<input name="url" type="url" placeholder="https://…"></label>
+        <label class="span2">Notes<input name="notes" placeholder="Optional context" maxlength="200"></label>
+      </div>
+      <div class="form-acts">
+        <button type="submit" class="btn btn-sm">Add row</button>
+        <p class="form-hint">Appends to localStorage — no redeploy needed.</p>
+      </div>
+    </form>
+  </div>
+
+  <p class="honest">Founder-only tracker in this browser. Not synced to a server.</p>
+</section>
 </div>
+<div class="page-toast" id="pageToast"></div>
 <script>
 const KEY='immune-lab-v1';
+const ENGAGE_KEY='immune-lab-engage-v1';
 const modes=['Train','Cruise','Lock'];
 const defaultState=()=>({mode:'Train',pending:true,rules:[],activity:[],patterns:['promo senders ignored 3×','unknown SMS filed 2×'],feedback:[]});
 let state=load();
 function load(){try{return Object.assign(defaultState(),JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){return defaultState()}}
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function pageToast(m){const t=document.getElementById('pageToast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
 function addAct(kind,detail){state.activity.unshift({kind,detail,ts:new Date().toLocaleString()});save();render()}
 function tickTime(){
   try{
@@ -359,9 +458,11 @@ function showPanel(name){
   document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('active',x.dataset.panel===name));
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.getElementById('panel-'+name).classList.add('active');
+  if(name==='engage') renderEngage();
 }
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>showPanel(b.dataset.panel));
 document.getElementById('gotoTry').onclick=()=>showPanel('try');
+document.getElementById('gotoEngage').onclick=e=>{e.preventDefault();showPanel('engage')};
 document.querySelectorAll('.navb button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.navb button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));document.getElementById('scr-'+b.dataset.tab).classList.add('active')});
 document.getElementById('modeChip').onclick=()=>{const i=modes.indexOf(state.mode);state.mode=modes[(i+1)%3];addAct('modeChange','Mode → '+state.mode)};
 document.querySelectorAll('[data-ans]').forEach(b=>b.onclick=()=>{
@@ -376,8 +477,140 @@ document.getElementById('cancelClean').onclick=()=>document.getElementById('moda
 document.getElementById('confirmClean').onclick=()=>{document.getElementById('modal').classList.remove('show');addAct('cleanup','Confirmed 2 commercial unsub+block');toast('Cleanup confirmed')};
 document.getElementById('fbBtn').onclick=()=>{const t=prompt('Feedback for TF / founder notes');if(!t)return;state.feedback.push(t);addAct('feedback',t.slice(0,80));toast('Feedback saved locally')};
 document.getElementById('reset').onclick=()=>{localStorage.removeItem(KEY);state=defaultState();save();render();toast('Reset')};
+
+
+const SEED=[
+  {id:'R1',channel:'Reddit',type:'post',when:'Sep 5, 2026',status:'live',url:'https://www.reddit.com/r/iphone/comments/1w8nezg/ios_wont_let_third_apps_own_the_lock_screen_so_im/',notes:'r/iphone launch post',handle:'none',thread:'R1'},
+  {id:'R1-S4',channel:'Reddit',type:'reply',when:'Sep 5, 2026',status:'live',url:'https://www.reddit.com/r/iphone/comments/1w8nezg/comment/p89b89p/',notes:'Reply in R1 thread',handle:'none',thread:'R1'},
+  {id:'X1',channel:'X',type:'post',when:'Sep 5, 2026',status:'live',url:'https://x.com/Marshyz99/status/2096474558999965844',notes:'Launch post',handle:'none',thread:'X1'},
+  {id:'X2',channel:'X',type:'post',when:'Sep 6, 2026',status:'live',url:'https://x.com/Marshyz99/status/2096746793136496956',notes:'Follow-up',handle:'none',thread:'X2'},
+  {id:'X-E1',channel:'X',type:'reply',when:'Sep 6, 2026',status:'live',url:'https://x.com/Marshyz99/status/2096835300332867753',notes:'Engagement reply',handle:'none',thread:'X-E1'},
+  {id:'X-E2',channel:'X',type:'reply',when:'Sep 6, 2026',status:'live',url:'https://x.com/Marshyz99/status/2096835569040896100',notes:'Engagement reply',handle:'none',thread:'X-E2'},
+  {id:'X-E3',channel:'X',type:'reply',when:'Sep 6, 2026',status:'live',url:'https://x.com/Marshyz99/status/2096835831256199504',notes:'Engagement reply',handle:'none',thread:'X-E3'},
+  {id:'X-E4',channel:'X',type:'reply',when:'Sep 6, 2026',status:'live',url:'https://x.com/Marshyz99/status/2096835991772222997',notes:'Engagement reply',handle:'none',thread:'X-E4'},
+  {id:'X-E5',channel:'X',type:'reply',when:'Sep 6, 2026',status:'live',url:'https://x.com/Marshyz99/status/2096837130051805035',notes:'Engagement reply',handle:'none',thread:'X-E5'},
+  {id:'R2',channel:'Reddit',type:'post',when:'Sep 6, 2026',status:'skipped',url:'',notes:'Skipped — no URL',handle:'none',thread:'R2'},
+  {id:'IH',channel:'IH',type:'post',when:'Sep 6, 2026',status:'blocked',url:'',notes:"Can't create posts yet",handle:'none',thread:'IH'}
+];
+
+function loadEngageStore(){
+  try{return JSON.parse(localStorage.getItem(ENGAGE_KEY)||'{}')}catch(e){return {}}
+}
+function saveEngageStore(store){localStorage.setItem(ENGAGE_KEY,JSON.stringify(store))}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function threadOf(row){
+  if(row.thread) return row.thread;
+  const m=String(row.id||'').match(/^(.+?)-S\d+$/i);
+  return m?m[1]:row.id;
+}
+function mergeEngage(){
+  const store=loadEngageStore();
+  const byId={};
+  SEED.forEach(r=>{byId[r.id]={...r}});
+  (store.added||[]).forEach(r=>{if(r&&r.id) byId[r.id]={...r,thread:threadOf(r)}});
+  const overrides=store.overrides||{};
+  Object.keys(overrides).forEach(id=>{
+    if(!byId[id]) return;
+    const o=overrides[id]||{};
+    if(o.handle!=null) byId[id].handle=o.handle;
+    if(o.notes!=null) byId[id].notes=o.notes;
+    if(o.status!=null) byId[id].status=o.status;
+  });
+  const order=[...SEED.map(r=>r.id),...(store.added||[]).map(r=>r.id).filter(id=>!SEED.some(s=>s.id===id))];
+  const seen=new Set();
+  const rows=[];
+  order.forEach(id=>{if(byId[id]&&!seen.has(id)){seen.add(id);rows.push(byId[id])}});
+  Object.keys(byId).forEach(id=>{if(!seen.has(id)) rows.push(byId[id])});
+  return rows;
+}
+function setOverride(id,patch){
+  const store=loadEngageStore();
+  store.overrides=store.overrides||{};
+  store.overrides[id]=Object.assign({},store.overrides[id]||{},patch);
+  saveEngageStore(store);
+}
+function renderEngage(){
+  const rows=mergeEngage();
+  const posts=rows.filter(r=>r.type==='post').length;
+  const replies=rows.filter(r=>r.type==='reply').length;
+  const threads=new Set(rows.map(threadOf)).size;
+  document.getElementById('engageChips').innerHTML=
+    `<span class="chip ok">${posts} Posts</span>`+
+    `<span class="chip info">${replies} Replies</span>`+
+    `<span class="chip">${threads} Threads</span>`+
+    `<span class="chip warn">${rows.filter(r=>r.handle==='unread').length} unread</span>`;
+  const body=document.getElementById('engageBody');
+  body.innerHTML=rows.map(r=>{
+    const link=r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">Open</a>`:`<span class="muted-dash">—</span>`;
+    const h=r.handle||'none';
+    return `<tr data-id="${esc(r.id)}">
+      <td class="id">${esc(r.id)}</td>
+      <td><span class="badge chan">${esc(r.channel)}</span></td>
+      <td><span class="badge type-${esc(r.type)}">${esc(r.type)}</span></td>
+      <td>${esc(r.when||'')}</td>
+      <td><span class="badge ${esc(r.status)}">${esc(r.status)}</span></td>
+      <td>${link}</td>
+      <td>${esc(r.notes||'')}</td>
+      <td><select class="handle ${esc(h)}" data-handle="${esc(r.id)}" aria-label="Replies to handle for ${esc(r.id)}">
+        <option value="none"${h==='none'?' selected':''}>none</option>
+        <option value="unread"${h==='unread'?' selected':''}>unread</option>
+        <option value="replied"${h==='replied'?' selected':''}>replied</option>
+      </select></td>
+    </tr>`;
+  }).join('');
+}
+document.getElementById('engageBody').addEventListener('change',e=>{
+  const sel=e.target.closest('select[data-handle]');
+  if(!sel) return;
+  const id=sel.getAttribute('data-handle');
+  setOverride(id,{handle:sel.value});
+  sel.className='handle '+sel.value;
+  renderEngage();
+  pageToast(id+' → '+sel.value);
+});
+document.getElementById('engageAdd').onsubmit=e=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  const row={
+    id:String(fd.get('id')||'').trim(),
+    channel:String(fd.get('channel')||'').trim(),
+    type:String(fd.get('type')||'').trim(),
+    when:String(fd.get('when')||'').trim()||new Date().toLocaleDateString('en-US',{timeZone:'America/Los_Angeles',month:'short',day:'numeric',year:'numeric'}),
+    status:String(fd.get('status')||'live').trim(),
+    url:String(fd.get('url')||'').trim(),
+    notes:String(fd.get('notes')||'').trim(),
+    handle:'none'
+  };
+  if(!row.id) return;
+  row.thread=threadOf(row);
+  const store=loadEngageStore();
+  store.added=store.added||[];
+  const i=store.added.findIndex(r=>r.id===row.id);
+  if(i>=0) store.added[i]=row; else store.added.push(row);
+  // also allow overriding a seed id by adding
+  if(SEED.some(s=>s.id===row.id)){
+    store.overrides=store.overrides||{};
+    store.overrides[row.id]=Object.assign({},store.overrides[row.id]||{},{notes:row.notes,status:row.status});
+  }
+  saveEngageStore(store);
+  e.target.reset();
+  renderEngage();
+  pageToast('Added '+row.id);
+};
+document.getElementById('exportEngage').onclick=()=>{
+  const rows=mergeEngage();
+  const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),rows},null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='immune-lab-engage.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  pageToast('Exported '+rows.length+' rows');
+};
+
 tickTime();setInterval(tickTime,30000);
 render();
+if(location.hash==='#engage') showPanel('engage');
 </script>
 </body>
 </html>
